@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>hollow.family</groupId>
+  <artifactId>hollowfamily</artifactId>
+  <version>0.0.1</version>
+  <packaging>pom</packaging>
+  <name>hollowfamily.pom</name>
+  <organization>
+		<name>FAMILIA HUECAS S.L</name>
+		<url>http://www.familiahuecas.es</url>
+  </organization>
+	<properties>
+		<!-- Cambiar la versión de este pom y aquí -->
+		<hollowfamily.version>0.0.1</hollowfamily.version>
+	</properties>
+	<modules>
+		<module>hollowfamily.frontend</module>
+		<module>hollowfamily.core</module>
+		<module>hollowfamily.ear</module>
+	</modules>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>ru.concerteza.buildnumber</groupId>
+				<artifactId>maven-jgit-buildnumber-plugin</artifactId>
+				<version>1.2.7</version>
+				<executions>
+					<execution>
+						<id>jgit-buildnumber</id>
+						<goals>
+							<goal>extract-buildnumber</goal>
+						</goals>
+						<phase>validate</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<description>
+		POM Principal de construccion
+		Para generar un empaquetado, ejecutar: mvn -Dmaven.test.skip=true clean install
+	</description>
+</project>
